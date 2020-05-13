@@ -1,36 +1,14 @@
-Docker and docker-compose class
-===============================
-
-Note about working user variables: you should export two variables at host machine — `DUID` (docker user id), variable with your current user ID and `DGID` (docker group id), variable with your current group.
-
-These variables are uses for launch php-process in a container.
-
-For example:    
-```shell script
-export DUID=$(id -u) && export DGID=$(id -g)
-```
-
-## Run project locally
-
-1. Build project: 
-    ```shell script
-    docker-compose build
-    ```
-1. Launch project:
-    ```shell script
-    docker-compose up -d
-    ```
-1. Install packages:
-    ```shell script
-    docker-compose exec app composer install
-    ```
-1. Run tests:
-    ```shell script
-    docker-compose exec app vendor/bin/phpunit
-    ```
-
-After start docker-compose you will see in your browser the next one:
-
-![Screenshot_2020-05-12_at_15.12.54](/uploads/0ae4961e86a2bd8ddd5472de03351a71/Screenshot_2020-05-12_at_15.12.54.png)
-
-This is a page with information about server environment variables, request and response data.
+1. Клонировал с репозитория креатива проект себе локально.
+2. Создал новый репозиторий в гите.
+3. Сменил удаленное хранилище (remote set) на свое.
+4. Запушил в него локальную копию.
+5. Создал новую ветку dev.
+6. На этой ветке нашел докер файл php и в нем добавил переменную окружения с ФИО.
+7. Заново собрал проект docker-compose up --build.
+8. Смерджил с веткой conflicted, вышел конфликт в MainController.php, я принял оба изменения.
+9. В docker/php собрал образ php.
+10. Создал хранилище в докер хаб.
+11. Запушил в него образ.
+12. Ветку dev merge с master. 
+13. Запушил на ГИТ.
+14. Описываю свои действия.
